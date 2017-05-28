@@ -1,6 +1,6 @@
 {
   "name": "@angularclass/universal-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tools to help with your Universal App",
   "main": "bundle.js",
   "jsnext:main": "index.js",
