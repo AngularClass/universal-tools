@@ -1,9 +1,9 @@
 {
-  "name": "angular-lib-starter",
+  "name": "@angularclass/universal-tools",
   "version": "0.0.1",
-  "description": "Starter to make Angular libs",
+  "description": "Tools to help with your Universal App",
   "main": "bundle.js",
-  "jsnext:main": "lib.module.js",
+  "jsnext:main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -14,9 +14,10 @@
     "build:aot": "ngc",
     "build": "rimraf build && npm run tslint && npm run build:esm && npm run build:bundle && npm run build:aot",
     "copy": "cp package.json dist && cp README.md dist",
-    "pack": "npm pack ./dist",
-    "publish": "npm publish ./dist",
-    "release": "rimraf dist && npm run build && npm run copy"
+    "package": "rm -rf build && npm run build:esm && npm run build:bundle && npm run copy",
+    "tags": "git add . && git push origin master && git push --tags",
+    "bump": "npm version patch -m\"upgrade to %s\"",
+    "release": "npm run bump && npm run tags && npm run package && npm publish dist/ --access public"
   },
   "license": "MIT",
   "devDependencies": {
