@@ -1,32 +1,32 @@
 {
-  "angularCompilerOptions": {
-    "skipTemplateCodegen": true
-  },
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "es2015",
-      "dom"
-    ],
-    "module": "commonjs",
-    "outDir": "./dist",
-    "sourceMap": true,
     "stripInternal": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "paths": {
+      "@angular/core": ["node_modules/@angular/core"],
+      "@angular/common": ["node_modules/@angular/common"]
+    },
+    "rootDir": "./src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "inlineSources": true,
     "target": "es5",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules"
-    ],
-    "types": [
-      "node"
+    "skipLibCheck": true,
+    "lib": [
+      "es2015", 
+      "dom"
     ]
   },
-  "exclude": [
-    "./src/**/*.spec.ts"
+  "files": [
+    "src/index.ts"
   ],
-  "include": [
-    "./src/**/*.ts"
-  ]
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true
+  }
 }

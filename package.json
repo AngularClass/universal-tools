@@ -17,7 +17,8 @@
     "package": "rm -rf build && npm run build:esm && npm run build:bundle && npm run copy",
     "tags": "git add . && git push origin master && git push --tags",
     "bump": "npm version patch -m\"upgrade to %s\"",
-    "release": "npm run bump && npm run tags && npm run package && npm publish dist/ --access public"
+    "roll": "ngc && rollup -c",
+    "release": "npm run bump && npm run tags && npm run roll && npm publish dist/ --access public",
   },
   "license": "MIT",
   "devDependencies": {
@@ -53,6 +54,7 @@
   "dependencies": {
     "css-loader": "^0.28.1",
     "postcss-loader": "^2.0.5",
+    "rollup": "^0.42.0",
     "sass-loader": "^6.0.5",
     "to-string-loader": "^1.1.5"
   }
