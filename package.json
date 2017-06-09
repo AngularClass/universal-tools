@@ -9,16 +9,14 @@
   "scripts": {
     "tslint": "tslint \"src/**/*.ts\"",
     "test": "rimraf ./tmp/mocha-webpack && mocha-webpack --opts 'mocha.opts'",
-    "build:esm": "ntsc -p tsconfig.esm.json",
-    "build:bundle": "webpack --progress --colors",
     "build:aot": "ngc",
     "build": "rimraf build && npm run tslint && npm run build:esm && npm run build:bundle && npm run build:aot",
     "copy": "cp package.json dist && cp README.md dist",
-    "package": "rm -rf build && npm run build:esm && npm run build:bundle && npm run copy",
+    "package": "rm -rf build && npm run build:aot && npm run roll && npm run copy",
     "tags": "git add . && git push origin master && git push --tags",
     "bump": "npm version patch -m\"upgrade to %s\"",
-    "roll": "ngc && rollup -c",
-    "release": "npm run bump && npm run tags && npm run roll && npm run copy && npm publish dist/ --access public"
+    "roll": "rollup -c",
+    "release": "npm run bump && npm run tags && npm run package && npm publish dist/ --access public"
   },
   "license": "MIT",
   "devDependencies": {
