@@ -18,7 +18,7 @@
     "tags": "git add . && git push origin master && git push --tags",
     "bump": "npm version patch -m\"upgrade to %s\"",
     "roll": "ngc && rollup -c",
-    "release": "npm run bump && npm run tags && npm run roll && npm publish dist/ --access public",
+    "release": "npm run bump && npm run tags && npm run roll && npm publish dist/ --access public"
   },
   "license": "MIT",
   "devDependencies": {
